@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1080px;
+    padding: 15px;
+    margin: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 10px 0;
+}
+
+.container {
+    max-width: 800px;
+    padding: 15px;
+    margin: 15px auto;
+}
+
+#memory-game {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+    border: 1px solid #efefef;
+    background-color: #dcdcdc;
+    padding: 15px;
+}
+
+.card {
+    border: 1px solid #68a8cd;
+    background-color: #cae5f5;
+    padding: 5px;
+    cursor: pointer;
+    transform: rotateY(-180deg);
+}
+
+.card img {
+    width: 100%;
+} 
+/*
+Ha van egy div- mint itt a .card és abban van elhelyezve egy kép, akkor mindig width: 100%
+de ha van egy height-ja is ennek akkor kell az, hogy object-fit:cover
+*/
+
+.hide {
+    opacity: 0;
+}
+
+.show {
+    opacity: 1;
+}
+
+.rotate {
+    transition: all 0.5s linear;
+    transform: rotateY(0deg); /*fontos, hogy itt a rotate-nél mindig kell egy deg, hogy mennyivel fordítjuk*/
+}
+
+/*
+transform 3 fajtája van amitt meg kell jegyezni -> elmagyarazas!! 
+*/
+
+.rotate-back {
+    transition: all 0.5 linear;
+    transform: rotateY(-180deg);
+}
+
+#points-holder {
+    max-width: 800px;
+    margin: 15px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+/*
+itt meg van a határozva neki a szélessége, tehát a box-nál már csak a magasságot kell beállítani 
+általában ez így van ha van egy container(points-holder), hogy beállítjuk a szélességet és majd a children-nél megadjuk a magasságot 
+margin: 15px auto;
+ezt meg azért, hogy ne érjen össze a #memory-game-vel és auto, mert az jó ha középre van helyezve  
+*/
+
+.box {
+    background-color: #efefef;
+    border: 1px solid #dcdcdc;
+    height: 40px;
+    margin-right: -1px;
+    text-align: center;
+    /*hogy ami benne vannak h3-asban, hogy errors meg points, amiket kiírunk azok középen legyenek*/
+}
+
+
+
